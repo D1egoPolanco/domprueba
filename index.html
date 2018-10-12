@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom1</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<h1> TITULO BIEN CHIDORI</h1>
+<div id="subtitulo"></div>
+
+<p id> Cuky aragana </p>
+<p id="p2">Cuky holgasana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet animi, architecto, aspernatur deleniti, ex explicabo facere inventore ipsa itaque laboriosam laborum magnam minima soluta. </p>
+<ol id="lista">
+    <li id="pimero">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, sed.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+</ol>
+
+<script>
+    var elementop = document.getElementsByTagName("p");
+    var segundoparrafo = document.getElementById("p2");
+    //1-crear el elemento
+
+    var elemento = document.createElement("h2");
+
+    //2- Crear un nodo de texto
+
+    var contenido = document.createTextNode("Est es nuestro titular ");
+
+    //3- añadir el nodo de texto al elemento
+
+    elemento.appendChild(contenido);
+    //4- añadir atributos al elemento
+    elemento.setAttribute("align","center");
+    //5- Agregar el elemento al documento
+    document.getElementById("subtitulo").appendChild(elemento);
+    document.body.appendChild(elemento);
+
+
+        //nuevoooooo
+    var elemento2 = document.createElement("li");
+    contenido2 = document.createTextNode("Nuevo texto")
+    elemento2.appendChild(contenido2);
+
+    //var padre = document.getElementById("lista");
+    var padre = document.getElementsByTagName("li")[0].parentNode,
+        hijo = document.getElementsByTagName("li")[0];
+padre.appendChild(elemento2);
+padre.insertBefore(elemento2, hijo);
+
+
+
+//ultimo ejemplo
+    var primerelemento = document.getElementById("pimero")
+    //acceder al texto
+    primerelemento.innerHTML = "reemplazo1"; //se puede agregar codigo html
+    primerelemento.textContent = "";
+    var elemento3 = document.createElement("li");
+    contenido3 = document.createTextNode("Nuevo nuevo texto")
+    elemento.appendChild(contenido3)
+</script>
+
+</body>
+</html>
